@@ -12,3 +12,8 @@ Contents of this repository:
 - Optimized sample code
 - Grunt task for optimized code generation (Uglify)
 - Grunt task for generating CSS files from *.woff and *.woff2 files (coming soon)
+
+
+Sample font files taken from:
+- [adobe-fonts/source-sans-pro](https://github.com/adobe-fonts/source-sans-pro)
+- [adobe-fonts/source-code-pro](https://github.com/adobe-fonts/source-code-pro)
