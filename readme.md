@@ -1,6 +1,6 @@
 # OptimizedFontLoading
 
-**Work in progress**
+*Work in progress*
 
 Some example code to show how it can work in real life projects.
 
