@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo: Optimized Webfont Loading</title>
+    <script>function loadFont(a,b,c){function d(){if(!window.FontFace)return!1;var a=new FontFace("t",'url("data:application/font-woff2,") format("woff2")');return a.load(),"loading"===a.status}var e={};try{e=localStorage||{}}catch(f){}var g="x-font-"+a,h=g+"url",i=g+"css",j=e[h],k=e[i],l=document.createElement("style");if(l.rel="stylesheet",document.head.appendChild(l),!k||j!==b&&j!==c){var m=c&&d()?c:c,n=new XMLHttpRequest;n.open("GET",m),n.onload=function(){n.status>=200&&n.status<400&&(e[h]=m,e[i]=l.textContent=n.responseText)},n.send()}else l.textContent=k}</script>
+    
+    <!-- This script must be placed in the HEAD above all external stylesheet declarations (link[rel=stylesheet]) -->
+    <script>loadFont('sourceSansPro', 'fonts.woff.css', 'fonts.woff2.css')</script>
+
+    <style>
+    body {
+        font-family: Source Sans Pro, sans-serif;
+        font-size: 150%;
+    }
+
+    .bold {
+        font-weight: 600;
+    }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+</body>
