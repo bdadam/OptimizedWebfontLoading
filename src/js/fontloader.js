@@ -44,7 +44,7 @@ function loadFont(fontName, woffUrl, woff2Url) {
         // 5. Checking for WOFF2 support to know which URL we should use
         var url = (woff2Url && supportsWoff2())
             ? woff2Url // WOFF2 URL provided and supported
-            : woff2Url; // only WOFF support
+            : woffUrl; // only WOFF support
 
 
         // 6. Fetching the font data from the server
