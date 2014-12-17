@@ -3,15 +3,17 @@
 <head>
     <meta charset="utf-8">
     <title>Demo: Optimized Webfont Loading</title>
+    <script>console.time && console.time('fontLoading');</script>
+
     <script>{{ fontloader.js }}</script>
-    
     <!-- This script must be placed in the HEAD above all external stylesheet declarations (link[rel=stylesheet]) -->
     <script>loadFont('sourceSansPro', 'fonts.woff.css', 'fonts.woff2.css')</script>
+
+    <script>console.timeEnd && console.timeEnd('fontLoading');</script>
 
     <style>
     body {
         font-family: Source Sans Pro, sans-serif;
-        font-size: 150%;
     }
 
     .bold {
@@ -20,6 +22,48 @@
     </style>
 </head>
 <body>
+    <button onclick="location.reload();">Reload</button>
+    <button onclick="localStorage.clear(); location.reload();">Clear localStorage & Reload</button>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
+    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>

@@ -1,5 +1,11 @@
 //This script must be placed in the HEAD above all external stylesheet declarations (link[rel=stylesheet])
 function loadFont(fontName, woffUrl, woff2Url) {
+    // 0. Many unsupported browsers should stop here
+    var nua = navigator.userAgent;
+    var noSupport = !window.addEventListener // IE8 and below
+            || (nua.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/) && !nua.match(/Chrome/)) // Android Stock Browser below 4.4 and Opera Mini
+
+    if (noSupport) { return; }
 
     // 1. Setting up localStorage
     var loSto = {};
@@ -20,7 +26,7 @@ function loadFont(fontName, woffUrl, woff2Url) {
     // 2. Setting up the <style> element, that we are using to apply the base64 encoded font data
     var styleElement = document.createElement('style');
     styleElement.rel = 'stylesheet';
-    document.head.appendChild(styleElement); // IE8 throws an error here, which is OK, since it doesn't support either WOFF or WOFF2
+    document.head.appendChild(styleElement);
     // Setting styleElement.textContent must be after this line, because of IE9 errors
 
 
