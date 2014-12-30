@@ -67,7 +67,7 @@ function loadFont(fontName, woffUrl, woff2Url) {
             return false;
         }
 
-        var f = new FontFace('t', 'url("data:application/font-woff2,") format("woff2")');
+        var f = new FontFace('t', 'url("data:application/font-woff2,") format("woff2")', {});
         f.load();
 
         return f.status === 'loading';
