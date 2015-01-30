@@ -10,8 +10,13 @@ module.exports = function(grunt) {
 
         replace: {
             inlinejs: {
-                src: 'src/demo.html',
-                dest: 'build/demo.html',
+                src: ['src/demo*.html'],
+                dest: 'build/',
+                //files: {
+
+                //},
+                //src: 'src/demo*.html',
+                //dest: 'build/demo.html',
                 replacements: [{
                     from: '{{ fontloader.js }}',
                     to: '<%= grunt.file.read("build/fontloader.js") %>'

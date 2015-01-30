@@ -1,5 +1,4 @@
 //This script must be placed in the HEAD above all external stylesheet declarations (link[rel=stylesheet])
-function loadFont(fontName, woffUrl, woff2Url) {
 function loadFont(fontName, woffUrl, woff2Url, onlyLoadFontOnSecondPageload) {
     // 0. Many unsupported browsers should stop here
     var nua = navigator.userAgent;
@@ -71,8 +70,8 @@ function loadFont(fontName, woffUrl, woff2Url, onlyLoadFontOnSecondPageload) {
         }
 
         var f = new FontFace('t', 'url("data:application/font-woff2,") format("woff2")', {});
-        f.load();
-
-        return f.status === 'loading';
+    	var p = f.load();
+    	try {p.then(null, function(){});}catch(e){}
+    	return f.status === 'loading';
     }
 }
