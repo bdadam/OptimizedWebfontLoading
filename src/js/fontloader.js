@@ -1,5 +1,6 @@
 //This script must be placed in the HEAD above all external stylesheet declarations (link[rel=stylesheet])
 function loadFont(fontName, woffUrl, woff2Url) {
+function loadFont(fontName, woffUrl, woff2Url, onlyLoadFontOnSecondPageload) {
     // 0. Many unsupported browsers should stop here
     var nua = navigator.userAgent;
     var noSupport = !window.addEventListener // IE8 and below
@@ -46,7 +47,6 @@ function loadFont(fontName, woffUrl, woff2Url) {
             ? woff2Url // WOFF2 URL provided and supported
             : woffUrl; // only WOFF support
 
-
         // 6. Fetching the font data from the server
         var request = new XMLHttpRequest();
         request.open('GET', url);
@@ -55,7 +55,10 @@ function loadFont(fontName, woffUrl, woff2Url) {
                 
                 // 7. Updating localStorage with the fresh data and applying the font data
                 loSto[localStorageUrlKey] = url;
-                loSto[localStorageCssKey] = styleElement.textContent = request.responseText;
+                loSto[localStorageCssKey] = request.responseText;
+                if (!onlyLoadFontOnSecondPageload) {
+                	styleElement.textContent = request.responseText;
+                }
             }
         };
         request.send();
