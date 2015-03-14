@@ -16,7 +16,7 @@ function loadFont(fontName, woffUrl, woff2Url, onlyLoadFontOnSecondPageload) {
         loSto = localStorage || {};
     } catch(ex) {}
 
-    var localStoragePrefix = 'x-font-' + fontName;
+    var localStoragePrefix = 'font-' + fontName;
     var localStorageUrlKey = localStoragePrefix + 'url';
     var localStorageCssKey = localStoragePrefix + 'css';
     var storedFontUrl = loSto[localStorageUrlKey];
