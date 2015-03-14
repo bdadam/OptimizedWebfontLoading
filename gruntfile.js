@@ -46,7 +46,7 @@ module.exports = function(grunt) {
             var fontStyle = /It/.test(file) ? 'italic' : 'normal';
             var fontFamily = file.split('.')[0].split('-')[0].split(/(?=[A-Z])/).join(' ');
 
-            var template = '@font-face{font-family:%s;src:url(data:application/x-font-%s;charset=utf-8;base64,%s) format("%s");font-weight:%d;font-style:%s}\n';
+            var template = '@font-face{font-family:%s;src:url(data:application/font-%s;charset=utf-8;base64,%s) format("%s");font-weight:%d;font-style:%s}\n';
             var css = util.format(template, fontFamily, format, b64, format, fontWeight, fontStyle);
             
             fs.write(format === 'woff' ? woffFile : woff2File, css);
@@ -70,7 +70,7 @@ module.exports = function(grunt) {
                 var fontStyle = c['font-style'] || 'normal';
                 var format = c['format'] || 'woff';
 
-                var template = '@font-face{font-family:%s;src:local("%s"),url(data:application/x-font-%s;charset=utf-8;base64,%s) format("%s");font-weight:%d;font-style:%s}';
+                var template = '@font-face{font-family:%s;src:local("%s"),url(data:application/font-%s;charset=utf-8;base64,%s) format("%s");font-weight:%d;font-style:%s}';
                 var css = util.format(template, fontFamily, )
 
 
