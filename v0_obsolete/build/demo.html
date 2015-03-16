@@ -4,106 +4,38 @@
     <meta charset="utf-8">
     <title>Demo: Optimized Webfont Loading</title>
     <script>console.time && console.time('fontLoading');</script>
+
+    <script>function loadFont(a,b,c,d){function e(){if(!window.FontFace)return!1;var a=new FontFace("t",'url("data:application/font-woff2,") format("woff2")',{}),b=a.load();try{b.then(null,function(){})}catch(c){}return"loading"===a.status}var f=navigator.userAgent,g=!window.addEventListener||f.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/)&&!f.match(/Chrome/);if(!g){var h={};try{h=localStorage||{}}catch(i){}var j="x-font-"+a,k=j+"url",l=j+"css",m=h[k],n=h[l],o=document.createElement("style");if(o.rel="stylesheet",document.head.appendChild(o),!n||m!==b&&m!==c){var p=c&&e()?c:b,q=new XMLHttpRequest;q.open("GET",p),q.onload=function(){q.status>=200&&q.status<400&&(h[k]=p,h[l]=q.responseText,d||(o.textContent=q.responseText))},q.send()}else o.textContent=n}}</script>
+    <!-- This script must be placed in the HEAD above all external stylesheet declarations (link[rel=stylesheet]) -->
+    <script>loadFont('sourceSansPro', 'fonts.woff.css', 'fonts.woff2.css')</script>
+
+    <script>console.timeEnd && console.timeEnd('fontLoading');</script>
+
     <style>
-        @font-face {
-            font-family: 'Source Sans Pro';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(fonts/SourceSansPro-Regular.woff2) format('woff2'), url(fonts/SourceSansPro-Regular.woff) format('woff');
-        }
+    body {
+        font-family: Source Sans Pro, sans-serif;
+    }
 
-        @font-face {
-            font-family: 'Source Sans Pro';
-            font-style: italic;
-            font-weight: 400;
-            src: local('Source Sans Pro Italic'), local('SourceSansPro-It'), url(fonts/SourceSansPro-It.woff2) format('woff2'), url(fonts/SourceSansPro-It.woff) format('woff');
-        }
-
-        @font-face {
-            font-family: 'Source Sans Pro';
-            font-style: normal;
-            font-weight: 600;
-            src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(fonts/SourceSansPro-Semibold.woff2) format('woff2'), url(fonts/SourceSansPro-Semibold.woff) format('woff');
-        }
-
-        @font-face {
-            font-family: 'Source Code Pro';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Source Code Pro Regular'), local('SourceCodePro-Regular'), url(fonts/SourceCodePro-Regular.woff2) format('woff2'), url(fonts/SourceCodePro-Regular.woff) format('woff');
-        }
-
-        @font-face {
-            font-family: 'Source Code Pro';
-            font-style: normal;
-            font-weight: 600;
-            src: local('Source Code Pro Semibold'), local('SourceCodePro-Semibold'), url(fonts/SourceCodePro-Semibold.woff2) format('woff2'), url(fonts/SourceCodePro-Semibold.woff) format('woff');
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .source-sans-pro-loaded body {
-            font-family: Source Sans Pro, Arial, sans-serif;
-        }
-
-        code {
-            font-family: monospace;
-            word-wrap: break-word;
-        }
-
-        .source-code-pro-loaded code {
-            font-family: Source Code Pro, monospace;
-        }
-
-        h1 {
-            font-weight: 900;
-        }
-
-        .bold {
-            font-weight: 600;
-        }
-
-        .italic {
-            font-style: italic;
-        }
+    .bold {
+        font-weight: 600;
+    }
     </style>
-    <script>{{ fontloader.js }}</script>
-    <script>
-    loadFont('Source Sans Pro', [400, '400-italic', 600, 900], 'source-sans-pro-loaded');
-    loadFont('Source Code Pro', [400, 600], 'source-code-pro-loaded');
-    </script>
 </head>
 <body>
     <button onclick="location.reload();">Reload</button>
     <button onclick="localStorage.clear(); location.reload();">Clear localStorage & Reload</button>
-    <h1>Lorem ipsum dolor sit amet</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
-    <p class="italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
-    <p class="italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
-
-    <h1>Code</h1>
-    <code><pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</pre></code>
-    <code><pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</pre></code>
-    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
-    <p class="italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
-    <p class="italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
-    <p class="italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
-    <p class="italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
-    <p class="italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p class="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet in distinctio animi, fugit quia cupiditate, quasi adipisci, quis totam excepturi ab at delectus cum laborum! Quasi, sed perferendis minima!</p>

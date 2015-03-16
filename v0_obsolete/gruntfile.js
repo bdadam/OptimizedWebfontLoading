@@ -22,23 +22,10 @@ module.exports = function(grunt) {
                     to: '<%= grunt.file.read("build/fontloader.js") %>'
                 }]
             }
-        },
-
-        watch: {
-            js: {
-                files: ['src/**/*.js'],
-                tasks: ['build']
-            },
-            html: {
-                files: ['src/**/*.html'],
-                tasks: ['build']
-            }
         }
     });
 
-    grunt.registerTask('default', ['build']);
-    grunt.registerTask('build', ['uglify', 'replace']);
-    grunt.registerTask('dev', ['build', 'watch']);
+    grunt.registerTask('default', ['uglify', 'replace']);
 
     grunt.registerTask('generateFonts', function() {
         var fs = require('fs');
@@ -93,6 +80,5 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-text-replace');
 };

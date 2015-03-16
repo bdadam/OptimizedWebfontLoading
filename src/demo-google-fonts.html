@@ -5,40 +5,8 @@
     <title>Demo: Optimized Webfont Loading</title>
     <script>console.time && console.time('fontLoading');</script>
     <style>
-        @font-face {
-            font-family: 'Source Sans Pro';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(fonts/SourceSansPro-Regular.woff2) format('woff2'), url(fonts/SourceSansPro-Regular.woff) format('woff');
-        }
-
-        @font-face {
-            font-family: 'Source Sans Pro';
-            font-style: italic;
-            font-weight: 400;
-            src: local('Source Sans Pro Italic'), local('SourceSansPro-It'), url(fonts/SourceSansPro-It.woff2) format('woff2'), url(fonts/SourceSansPro-It.woff) format('woff');
-        }
-
-        @font-face {
-            font-family: 'Source Sans Pro';
-            font-style: normal;
-            font-weight: 600;
-            src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(fonts/SourceSansPro-Semibold.woff2) format('woff2'), url(fonts/SourceSansPro-Semibold.woff) format('woff');
-        }
-
-        @font-face {
-            font-family: 'Source Code Pro';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Source Code Pro Regular'), local('SourceCodePro-Regular'), url(fonts/SourceCodePro-Regular.woff2) format('woff2'), url(fonts/SourceCodePro-Regular.woff) format('woff');
-        }
-
-        @font-face {
-            font-family: 'Source Code Pro';
-            font-style: normal;
-            font-weight: 600;
-            src: local('Source Code Pro Semibold'), local('SourceCodePro-Semibold'), url(fonts/SourceCodePro-Semibold.woff2) format('woff2'), url(fonts/SourceCodePro-Semibold.woff) format('woff');
-        }
+        @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,900,400italic&subset=latin,latin-ext);
+        @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600&subset=latin,latin-ext);
 
         body {
             font-family: Arial, sans-serif;

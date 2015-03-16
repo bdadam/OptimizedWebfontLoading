@@ -5,40 +5,8 @@
     <title>Demo: Optimized Webfont Loading</title>
     <script>console.time && console.time('fontLoading');</script>
     <style>
-        @font-face {
-            font-family: 'Source Sans Pro';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(fonts/SourceSansPro-Regular.woff2) format('woff2'), url(fonts/SourceSansPro-Regular.woff) format('woff');
-        }
-
-        @font-face {
-            font-family: 'Source Sans Pro';
-            font-style: italic;
-            font-weight: 400;
-            src: local('Source Sans Pro Italic'), local('SourceSansPro-It'), url(fonts/SourceSansPro-It.woff2) format('woff2'), url(fonts/SourceSansPro-It.woff) format('woff');
-        }
-
-        @font-face {
-            font-family: 'Source Sans Pro';
-            font-style: normal;
-            font-weight: 600;
-            src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(fonts/SourceSansPro-Semibold.woff2) format('woff2'), url(fonts/SourceSansPro-Semibold.woff) format('woff');
-        }
-
-        @font-face {
-            font-family: 'Source Code Pro';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Source Code Pro Regular'), local('SourceCodePro-Regular'), url(fonts/SourceCodePro-Regular.woff2) format('woff2'), url(fonts/SourceCodePro-Regular.woff) format('woff');
-        }
-
-        @font-face {
-            font-family: 'Source Code Pro';
-            font-style: normal;
-            font-weight: 600;
-            src: local('Source Code Pro Semibold'), local('SourceCodePro-Semibold'), url(fonts/SourceCodePro-Semibold.woff2) format('woff2'), url(fonts/SourceCodePro-Semibold.woff) format('woff');
-        }
+        @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,900,400italic&subset=latin,latin-ext);
+        @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600&subset=latin,latin-ext);
 
         body {
             font-family: Arial, sans-serif;
@@ -69,7 +37,7 @@
             font-style: italic;
         }
     </style>
-    <script>{{ fontloader.js }}</script>
+    <script>function loadFont(a,b,c){function d(d,j){var k="sans-serif",l=h.createElement("div"),m=l.style;l.innerHTML="AsdfQwerMXox159",m.fontFamily=k,m.fontWeight=d,m.fontSize="14px",m.fontStyle=j,m.position="absolute",m.left="-9999px",e(function(){h.body.appendChild(l);var d=l.clientWidth;m.fontFamily=a+","+k,e(function j(){l.clientWidth===d?e(j):--f||(h.body.removeChild(l),localStorage[g]=b,i.className+=" "+c)})})}var e=window.requestAnimationFrame||function(a){setTimeout(a,16)},f=0,g="-font-"+a,h=document,i=h.documentElement;if(localStorage[g]===""+b)return i.className+=" "+c;for(var j=0,k=b.length;k>j;j++){var l=(""+b[j]).split("-"),m=l[0]||400,n=l[1]||"normal";f++,d(m,n)}}</script>
     <script>
     loadFont('Source Sans Pro', [400, '400-italic', 600, 900], 'source-sans-pro-loaded');
     loadFont('Source Code Pro', [400, 600], 'source-code-pro-loaded');
